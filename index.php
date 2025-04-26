@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Jestr Dog - The Future of Memecoin on Solana">
+  <meta property="og:description" content="Join the first Solana memecoin launched from telegram! - Get a chance to fly to the moon together.">
+  <meta property="og:image" content="https://jestrdog.com/logo.jpg">
+  <meta property="og:url" content="https://jestrdog.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jestr Dog">
+
+  <title>JestrDog - $JSTRDOG</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <div class="overlay"></div>
+
+  <header>
+    <img src="banner-image.png" alt="JestrDog Banner" class="banner" data-aos="fade-in">
+  </header>
+
+  <section class="buttons" data-aos="fade-up">
+    <a href="https://x.com/jestrdog" class="btn" target="_blank">Twitter</a>
+    <a href="https://dexscreener.com/solana/5CobNnc2t8ecsgn5u1Q4fd7REEPD5pJC6vfbftAfSkuf" class="btn" target="_blank">Dexscreener</a>
+  </section>
+
+  <div class="background-logo">
+    <div class="content">
+      <h1 id="typewriter"></h1>
+      <p>Contract Address, Trading Chart, and other information below.</p>
+      
+      <!-- Contract Address block disini -->
+      <section class="contract-address" data-aos="fade-up">
+        <h2>Contract Address</h2>
+        <div class="ca-container" style="text-align: center; margin-top: 10px;">
+        <span id="ca" class="ca-text" data-full="5CobNnc2t8ecsgn5u1Q4fd7REEPD5pJC6vfbftAfSkuf" style="display: inline-block; text-align: center;">
+    5CobNnc2t8...AfSkuf
+        </span>
+        <button class="copy-btn" onclick="copyCA()" style="background: transparent; border: none; font-size: 20px; cursor: pointer; color: #00ffff; margin-left: 10px;">📋</button>
+    </div>
+
+      </section>
+
+    </div>
+  </div>
+
+  <section class="intro" data-aos="fade-up">
+    <h1>$JSTRDOG - Pioneer Solana Memecoin launched on Telegram</h1>
+    <p>Meet JestrDog – the first Solana memecoin launched directly through Telegram, pioneering a new wave of community-driven tokens and setting the standard for Solana's memecoin revolution.</p>
+
+    <p><strong>JESTRDOG</strong> was born straight from the meme factory – <strong><a href="https://x.com/jestrbot">JestrBot</a></strong>, a revolutionary free-to-use tool that lets anyone launch a Solana memecoin with nothing but a Twitter or Telegram account.</p>
+  </section>
+
+  <iframe id="dextools-widget"
+    style="display: block; margin: 0 auto; aspect-ratio: 3/2; width: 100%; max-width: 800px; border: none;"
+    title="JestrDog Trading Chart"
+    src="https://www.dextools.io/widget-chart/en/solana/pe-light/5CobNnc2t8ecsgn5u1Q4fd7REEPD5pJC6vfbftAfSkuf?theme=light&chartType=2&chartResolution=30&drawingToolbars=false">
+  </iframe>
+
+  <section class="tokenomics" data-aos="fade-up">
+    <h2>Tokenomics</h2>
+    <ul>
+      <li><strong>Total Supply:</strong> 1,000,000,000</li>
+      <li><strong>Liquidity:</strong> 100% Locked</li>
+      <li><strong>Ownership:</strong> Renounced</li>
+      <li><strong>Tax:</strong> 0% Buy / 0% Sell</li>
+      <li><strong>Launch Type:</strong> Fair Launch</li>
+    </ul>
+  </section>
+
+  <section class="roadmap" data-aos="fade-up">
+    <h2>Roadmap</h2>
+    <div class="phase">
+      <h3>Phase 1 - The Awakening</h3>
+      <p>Website launch, fair launch on Solana, Twitter awareness, first meme drops.</p>
+    </div>
+    <div class="phase">
+      <h3>Phase 2 - The Rise</h3>
+      <p>Community events, meme contests, influencer shoutouts, 5K holders goal.</p>
+    </div>
+    <div class="phase">
+      <h3>Phase 3 - To the Moon</h3>
+      <p>NFT integration, JestrDog merch store, roadmap expansion.</p>
+    </div>
+  </section>
+
+  <footer data-aos="fade-up">
+    <p>© 2025 JestrDog. Powered by Solana blockchain and meme energy.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="particles-config.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Copy CA
+    const caText = document.getElementById('ca');
+    caText.addEventListener('copy', function(e) {
+      e.preventDefault();
+      const fullCA = caText.getAttribute('data-full');
+      if (e.clipboardData) {
+        e.clipboardData.setData('text/plain', fullCA);
+      } else if (window.clipboardData) {
+        window.clipboardData.setData('Text', fullCA);
+      }
+    });
+
+    function copyCA() {
+      const fullCA = caText.getAttribute('data-full');
+      navigator.clipboard.writeText(fullCA).then(() => {
+        alert('Contract address copied!');
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+  </script>
+  <script>
+  // Typewriter effect
+  const txt = "Welcome to JestrDog Landing Page!";
+  const speed = 30; // Kecepatan ngetik (ms)
+  let i = 0;
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("typewriter").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    } else {
+      blinkCursor(); // setelah selesai ngetik, mulai blinking
+    }
+  }
+
+  function blinkCursor() {
+    const elem = document.getElementById("typewriter");
+    setInterval(() => {
+      elem.innerHTML = elem.innerHTML.endsWith("|") 
+        ? elem.innerHTML.slice(0, -1) 
+        : elem.innerHTML + "|";
+    }, 500);
+  }
+
+  document.addEventListener("DOMContentLoaded", typeWriter);
+  </script>
+
+</body>
+</html>
